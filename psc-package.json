@@ -1,0 +1,14 @@
+{
+  "name": "record",
+  "set": "master",
+  "source": "https://github.com/pure-c/package-sets",
+  "depends": [
+    "prelude",
+    "functions",
+    "st",
+    "typelevel-prelude",
+    "unsafe-coerce",
+    "assert"
+  ]
+}
+
