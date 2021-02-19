@@ -1,13 +1,13 @@
 default: main
 .PHONY: default
 
-ifndef PUREC_DIR
-	$(error '$$PUREC_DIR not set')
-endif
+CFLAGS = -O0 -g3
 
 include $(PUREC_DIR)/mk/target.mk
 
-$(eval $(call purs_mk_target,main,Test.Main,src test,))
+main: .spago
 
-check: main
-	@./main.out
+$(eval $(call purs_mk_target,main,Test.Main,src test))
+
+main_leakcheck: main
+check: main_leakcheck
